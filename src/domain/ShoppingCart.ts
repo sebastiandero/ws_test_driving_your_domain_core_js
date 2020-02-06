@@ -24,11 +24,11 @@ export class ShoppingCart {
         return this._products[0]
     }
 
-    get totalAmount(){
-        return this._products.reduce((previousValue, currentValue) => previousValue + currentValue.price, 0)
+    get totalAmount() {
+        return `${this._products.reduce((previousValue, currentValue) => previousValue + currentValue.price, 0)} EUR`
     }
 
-    proceedToCheckout(){
+    proceedToCheckout() {
         //noop?
     }
 

@@ -45,5 +45,5 @@ Then(/^the first item is "([^"]*)"$/, function (itemName: string) {
     expect(this.shoppingCart.firstItem.name).toBe(itemName)
 })
 Then(/^the following order with a total amount due of ([^"]*) is created:$/, function (price: string, table: TableDefinition) {
-    expect(this.shoppingCart.totalAmount + " EUR").toBe(price)
+    expect(this.shoppingCart.totalAmount).toBe(price)
 })
