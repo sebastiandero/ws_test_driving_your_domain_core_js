@@ -4,7 +4,7 @@ import {ShoppingCart} from "../../../src/domain/ShoppingCart"
 
 class World {
     public products: Product[] = [];
-    public shoppingCart: ShoppingCart = new ShoppingCart([]);
+    public shoppingCart: ShoppingCart = ShoppingCart.createEmpty();
 }
 
 setWorldConstructor(World)

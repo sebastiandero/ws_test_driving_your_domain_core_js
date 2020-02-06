@@ -21,4 +21,24 @@ describe('Shopping Cart:', () => {
             expect(cart.products).not.toContain(product);
         })
     });
+
+    describe('itemCount', () => {
+        it('should return the correct count', () => {
+            const cart = ShoppingCart.createWithProducts([Product.withName('123')])
+            expect(cart.itemCount).toBe(1);
+        })
+    });
+
+    describe('firstItem', () => {
+        it('should return the first item', () => {
+            const cart = ShoppingCart.createWithProducts([Product.withName('123'), Product.withName('abc')])
+            expect(cart.firstItem.name).toBe('123');
+        })
+    });
+    describe('totalAmount', () => {
+        it('should return sum of all numbers', () => {
+            const cart = ShoppingCart.createWithProducts([Product.withNameAndPrice('123', '123.5 EUR'), Product.withNameAndPrice('abc', '123 EUR')])
+            expect(cart.totalAmount).toBe(123.5 + 123);
+        })
+    });
 })

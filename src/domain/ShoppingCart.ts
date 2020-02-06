@@ -16,6 +16,22 @@ export class ShoppingCart {
         return this._products.slice();
     }
 
+    get itemCount() {
+        return this._products.length
+    }
+
+    get firstItem() {
+        return this._products[0]
+    }
+
+    get totalAmount(){
+        return this._products.reduce((previousValue, currentValue) => previousValue + currentValue.price, 0)
+    }
+
+    proceedToCheckout(){
+        //noop?
+    }
+
     addProducts(products: Product[]) {
         this._products.push(...products)
     }
